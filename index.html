@@ -5,32 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Base Apparel</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="signup-container">
-        <div class="navigation">
-            <img src="./images/logo.svg" alt="site-logo">
-            <div>Base Apparel</div>
-        </div>
-        <div class="registration">
-            <div class="header-1">
-                We're <br>
-                Coming <br> 
-                Soon
+    <div class="hero-container">
+        <main class="main-container">
+            <div class="navigation">
+                <img src="./images/logo.svg" alt="site-logo">
             </div>
-            <div>
-                Hello fellow shoppers! We're currently building our new <br>
-                fashion store. Add your email below to stay up-to-date with <br>
-                announcements and our launch deals.
-            </div>
-            <form>
-                <input type="email" placeholder="Email Address" id="email">
-                <button><img src="./images/icon-arrow.svg" alt="arrow icon button"></button>
-            </form>
-        </div>
+            <div class="registration">
+                <div class="header-1">
+                    <span class="were">We're</span><br>
+                    Coming <br> 
+                    Soon
+                </div>
+                <div class="para-1">
+                    Hello fellow shoppers! We're currently building our new <br>
+                    fashion store. Add your email below to stay up-to-date with <br>
+                    announcements and our launch deals.
+                </div>
+                <form>
+                    <input type="email" placeholder="Email Address" id="email">
+                    <button>
+                        <img src="./images/icon-arrow.svg" alt="arrow icon button">
+                    </button>
+                </form>
+            </div> 
+        </main>
+        <img src="./images/hero-desktop.jpg" alt="base apparel model">
     </div>
-    <div class="image-container">
-        <img src="./images/hero-desktop.jpg" alt="website female model">
-    </div>
+    <script>
+        const btn = document.querySelector('button');
+        const email = document.querySelector('#email');
+
+        function checkedEmail() {
+            
+        }
+        btn.addEventListener('click', checkedEmail);
+
+
+    </script>
 </body>
 </html>
