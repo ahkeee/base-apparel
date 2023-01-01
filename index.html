@@ -26,22 +26,35 @@
                 </div>
                 <form>
                     <input type="email" placeholder="Email Address" id="email">
-                    <button>
-                        <img src="./images/icon-arrow.svg" alt="arrow icon button">
-                    </button>
+                    <button><img src="./images/icon-arrow.svg" alt="arrow icon button" id="arrow"></button>
+                    <p role="alert" id="emailError" aria-hidden="true">
+                        Please provide a valid email
+                    </p> 
                 </form>
-            </div> 
+            </div>
         </main>
         <img src="./images/hero-desktop.jpg" alt="base apparel model">
     </div>
     <script>
-        const btn = document.querySelector('button');
-        const email = document.querySelector('#email');
+        const submit = document.querySelector('button');
+        const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        let valid = true;
 
-        function checkedEmail() {
+        function checkedEmail(e) {
+            e.preventDefault();
             
+            const emailField = document.querySelector('#email');
+            if (!emailField.value.match(validRegex)) {
+                const emailError = document.querySelector('#emailError');
+                emailError.classList.add('visible');
+                emailField.classList.add('invalid');
+                emailError.setAttribute('aria-hidden', false);
+                emailError.setAttribute('aria-invalid', true);
+                emailField.placeholder = '';
+            }
+            return valid;
         }
-        btn.addEventListener('click', checkedEmail);
+        submit.addEventListener('click', checkedEmail);
 
 
     </script>
